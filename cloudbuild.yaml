@@ -1,0 +1,15 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/dupcloudparser-image2032', '.']
+    timeout: 500s
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/dupcloudparser-image2032']
+  - name: 'gcr.io/cloud-builders/kubectl'
+    #args: ['set', 'image', 'deployment/deployment', 'my-container=gcr.io/$PROJECT_ID/dupcloudparser-image2032']
+    args: ['apply','-f','deployment.yml']
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=dup-cluster'
+timeout: 500s
+tags: ['mytag1', 'mytag2']
+images: ['gcr.io/$PROJECT_ID/dupcloudparser-image2032']

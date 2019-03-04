@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: dupcloudparser
+  name: dupcloudparser
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dupcloudparser
+    spec:
+      containers:
+        - name: dupcloudparser-image2032
+          image: gcr.io/ambient-polymer-228615/dupcloudparser-image2032
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
