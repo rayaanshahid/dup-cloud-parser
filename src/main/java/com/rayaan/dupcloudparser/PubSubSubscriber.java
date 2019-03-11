@@ -4,8 +4,8 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
-//import com.google.pubsub.v1.ProjectSubscriptionName;
-import com.google.pubsub.v1.SubscriptionName;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+//import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
 
 import java.util.concurrent.BlockingQueue;
@@ -36,7 +36,7 @@ public class PubSubSubscriber {
     public static void main(String... args) throws Exception {
         // set subscriber id, eg. my-sub
         String subscriptionId = "FileUploadTopicSubscription";//args[0];
-        SubscriptionName subscriptionName = SubscriptionName.of(
+        ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(
                 PROJECT_ID, subscriptionId);
         Subscriber subscriber = null;
         try {
