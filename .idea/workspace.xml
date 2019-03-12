@@ -4,6 +4,9 @@
     <list default="true" id="33eb861b-e917-4c58-958b-752ef406fa48" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rayaan/dupcloudparser/GCS/GcsReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rayaan/dupcloudparser/GCS/GcsReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rayaan/dupcloudparser/PubSubSubscriber$MessageReceiverExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rayaan/dupcloudparser/PubSubSubscriber$MessageReceiverExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rayaan/dupcloudparser/PubSubSubscriber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rayaan/dupcloudparser/PubSubSubscriber.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/dup-cloud-parser-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/dup-cloud-parser-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
@@ -47,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+            <state relative-caret-position="165">
+              <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -166,7 +169,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552321928321" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552392027340" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -266,8 +269,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+        <state relative-caret-position="165">
+          <caret line="47" column="47" lean-forward="true" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
         </state>
       </provider>
     </entry>
