@@ -19,8 +19,8 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <!-- Build an executable JAR -->
+            <!--<plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.4</version>
@@ -30,6 +30,19 @@
                             <mainClass>com.rayaan.dupcloudparser.PubSubSubscriber</mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>-->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.rayaan.dupcloudparser.PubSubSubscriber</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                 </configuration>
             </plugin>
             <plugin>
