@@ -27,6 +27,7 @@ public class PubSubSubscriber {
 
         @Override
         public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
+            System.out.println("received message");
             messages.offer(message);
             consumer.ack();
         }
@@ -38,12 +39,15 @@ public class PubSubSubscriber {
         String subscriptionId = "FileUploadTopicSubscription";//args[0];
         ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(
                 PROJECT_ID, subscriptionId);
+        System.out.println("1");
         Subscriber subscriber = null;
+        System.out.println("2");
         try {
             // create a subscriber bound to the asynchronous message receiver
             subscriber =
                     Subscriber.newBuilder(subscriptionName, new MessageReceiverExample()).build();
             subscriber.startAsync().awaitRunning();
+            System.out.println("3");
             // Continue to listen to messages
             while (true) {
                 PubsubMessage message = messages.take();
@@ -53,6 +57,7 @@ public class PubSubSubscriber {
             }
         }finally {
             if (subscriber != null) {
+                System.out.println("finally");
                 subscriber.stopAsync();
             }
         }
