@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class GcsFileReader {
     private String PROJECT_ID = "ambient-polymer-228615 ";
-    private String PATH_TO_JSON_KEY = "/Home/sysco/key/ambient-polymer-228615-cbda2d709bde.json";
+    private String PATH_TO_JSON_KEY = "ambient-polymer-228615-cbda2d709bde.json";
     private String BUCKET_NAME;
     private String OBJECT_NAME;
 
