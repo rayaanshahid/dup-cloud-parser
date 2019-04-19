@@ -14,6 +14,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
 
 public class PubSubSubscriber {
     // use the default project id
@@ -55,7 +56,10 @@ public class PubSubSubscriber {
                 System.out.println("Message Id: " + message.getMessageId());
                 String data = message.getData().toStringUtf8();
                 System.out.println("Data: " + data);
-
+                String bucket=StringUtils.substringBetween(data, "bucket", ",");
+                System.out.println("bucket: " + bucket);
+                String fileName=StringUtils.substringBetween(data, "name", ",");
+                System.out.println("file name: " + fileName);
                 //gcsReader.doGet("","");
             }
         }finally {
