@@ -19,7 +19,7 @@ public class GcsFileReader {
         OBJECT_NAME = file_name;
         StorageOptions options = StorageOptions.newBuilder()
                 .setProjectId(PROJECT_ID)
-                .setCredentials(GoogleCredentials.fromStream(new FileInputStream(PATH_TO_JSON_KEY))).build();
+                .build();
         Storage storage = options.getService();
         Blob blob = storage.get(BUCKET_NAME, OBJECT_NAME);
         String fileContent = new String(blob.getContent());
