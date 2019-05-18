@@ -20,11 +20,11 @@ public class GcsFileReader {
     public String Readfile(String bucket_name, String file_name) throws IOException {
         BUCKET_NAME = bucket_name;
         OBJECT_NAME = file_name;
-        GoogleCredentials credentials = ComputeEngineCredentials.create();
-        StorageOptions options = StorageOptions.newBuilder()
+        /*StorageOptions options = StorageOptions.newBuilder()
                 .setProjectId(PROJECT_ID)
-                .setCredentials(credentials).build();
-        Storage storage = options.getService();
+                .setCredentials(GoogleCredentials.fromStream(new FileInputStream(jsonCredentialPath()))).build();
+        Storage storage = options.getService();*/
+        Storage storage = StorageOptions.getDefaultInstance().getService();
         Blob blob = storage.get(BUCKET_NAME, OBJECT_NAME);
         String fileContent = new String(blob.getContent());
         return fileContent;
