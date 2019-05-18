@@ -1,5 +1,6 @@
 package com.rayaan.dupcloudparser.GCS;
 
+import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.*;
 
@@ -19,9 +20,10 @@ public class GcsFileReader {
     public String Readfile(String bucket_name, String file_name) throws IOException {
         BUCKET_NAME = bucket_name;
         OBJECT_NAME = file_name;
+        GoogleCredentials credentials = ComputeEngineCredentials.create();
         StorageOptions options = StorageOptions.newBuilder()
                 .setProjectId(PROJECT_ID)
-                .setCredentials(GoogleCredentials.fromStream(new FileInputStream(jsonCredentialPath()))).build();
+                .setCredentials(credentials).build();
         Storage storage = options.getService();
         Blob blob = storage.get(BUCKET_NAME, OBJECT_NAME);
         String fileContent = new String(blob.getContent());
