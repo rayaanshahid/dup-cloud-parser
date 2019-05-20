@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class GcsReader extends HttpServlet{
-    public static final boolean SERVE_USING_BLOBSTORE_API = true;
+    public static final boolean SERVE_USING_BLOBSTORE_API = false;
 
     /**
      * This is where backoff parameters are configured. Here it is aggressively retrying with
@@ -44,17 +44,16 @@ public class GcsReader extends HttpServlet{
      * a request to read the GCS file named Bar in the bucket Foo.
      */
 //[START doGet]
-    public void doGet(String objectName,String bucketName, HttpServletResponse resp) throws IOException {
-        //GcsFilename fileName = getFileName(req);
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        GcsFilename fileName = getFileName(req);
         if (SERVE_USING_BLOBSTORE_API) {
             BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
             BlobKey blobKey = blobstoreService.createGsBlobKey(
-                    "/gs/" + bucketName + "/" + objectName);
+                    "/gs/" + fileName.getBucketName() + "/" + fileName.getObjectName());
             blobstoreService.serve(blobKey, resp);
         } else {
-            //GcsInputChannel readChannel = gcsService.openPrefetchingReadChannel(fileName, 0, BUFFER_SIZE);
-            //copy(Channels.newInputStream(readChannel), resp.getOutputStream());
-            System.out.println("Didn't Read the file, Went in Else !!!");
+            GcsInputChannel readChannel = gcsService.openPrefetchingReadChannel(fileName, 0, BUFFER_SIZE);
+            copy(Channels.newInputStream(readChannel), resp.getOutputStream());
         }
     }
 //[END doGet]
