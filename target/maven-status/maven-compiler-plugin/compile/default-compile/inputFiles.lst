@@ -1,2 +1,3 @@
 /home/rayaan/sysco/dup-cloud-parser/src/main/java/com/rayaan/dupcloudparser/GCS/GCSFileReader.java
+/home/rayaan/sysco/dup-cloud-parser/src/main/java/com/rayaan/dupcloudparser/GCS/GCSBlobReader.java
 /home/rayaan/sysco/dup-cloud-parser/src/main/java/com/rayaan/dupcloudparser/PubSubSubscriber.java

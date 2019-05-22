@@ -7,6 +7,7 @@ import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 //import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
+import com.rayaan.dupcloudparser.GCS.GCSBlobReader;
 import com.rayaan.dupcloudparser.GCS.GCSFileReader;
 
 import java.util.concurrent.BlockingQueue;
@@ -44,7 +45,7 @@ public class PubSubSubscriber {
         System.out.println("1");
         Subscriber subscriber = null;
         System.out.println("2");
-        GCSFileReader gcsFileReader = new GCSFileReader();
+        GCSBlobReader gcsBlobReader = new GCSBlobReader();
         try {
             // create a subscriber bound to the asynchronous message receiver
             subscriber = Subscriber.newBuilder(subscriptionName, new MessageReceiverExample()).build();
@@ -60,8 +61,8 @@ public class PubSubSubscriber {
                 System.out.println("bucket: " + bucket);
                 String fileName=StringUtils.substringBetween(data, "name", ",");
                 System.out.println("file name: " + fileName);
-                gcsFileReader.readBlob(bucket,fileName);
-                //System.out.println("file content: " + content);
+                String content = gcsBlobReader.readBlob(bucket,fileName);
+                System.out.println("file content: " + content);
             }
         }finally {
             if (subscriber != null) {

@@ -2,3 +2,4 @@ com/rayaan/dupcloudparser/GCS/GCSFileReader$1.class
 com/rayaan/dupcloudparser/PubSubSubscriber.class
 com/rayaan/dupcloudparser/PubSubSubscriber$MessageReceiverExample.class
 com/rayaan/dupcloudparser/GCS/GCSFileReader.class
+com/rayaan/dupcloudparser/GCS/GCSBlobReader.class
