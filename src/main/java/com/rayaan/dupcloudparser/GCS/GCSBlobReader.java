@@ -13,5 +13,4 @@ public class GCSBlobReader {
         byte[] content = storage.readAllBytes(blobId);
         return new String(content, UTF_8);
     }
-
 }
